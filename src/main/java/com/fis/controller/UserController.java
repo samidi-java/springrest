@@ -1,6 +1,7 @@
 package com.fis.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +18,12 @@ public class UserController {
 	public UserInfo createUser(@RequestBody UserInfo user)
 	{
 		return service.createUser(user);
+	}
+	
+	@GetMapping("/hello")
+	public String message()
+	{
+		return "Hello world";
 	}
 
 }
